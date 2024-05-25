@@ -3,10 +3,9 @@ with product as (
         productid as product_id,
         name as product_name,
         productnumber as product_number,
-        color,
-        size,
-        weight,
-        productsubcategoryid
+        color as color,
+        size as size,
+        weight as weight,
     from 
         {{ source('production', 'product') }}
 ),
@@ -41,4 +40,3 @@ from
     product p
     left join subcategory s on p.productsubcategoryid = s.productsubcategoryid
     left join category c on s.productcategoryid = c.productcategoryid
-
