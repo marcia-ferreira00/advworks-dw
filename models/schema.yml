@@ -4,19 +4,103 @@ sources:
   - name: humanresources
     schema: humanresources
     tables:
-     - name: employee
-     - name: department
-     - name: shift
+      - name: employee
+      - name: department
+      - name: shift
   - name: person
     schema: person
     tables:
       - name: person
+  - name: production  
+    schema: production
+    tables:
+      - name: product
+      - name: productsubcategory
+      - name: productcategory
+  - name: purchasing
+    schema: purchasing
+    tables:
+      - name: purchaseorderheader
+      - name: purchaseorderdetail
+      - name: vendor
+      - name: shipmethod
 
 models:
-  - name: stg_employee
+  - name: stg_product
     columns:
-      - name: employee_id
-        description: "A unique identifier for the employee"
+      - name: product_id
+        description: "A unique identifier for the product"
         tests:
           - unique
           - not_null
+      - name: product_name
+        description: "The name of the product"
+      - name: product_number
+        description: "The product number"
+      - name: category
+        description: "The category of the product"
+      - name: subcategory
+        description: "The subcategory of the product"
+      - name: color
+        description: "The color of the product"
+      - name: size
+        description: "The size of the product"
+      - name: weight
+        description: "The weight of the product"
+  - name: stg_purchasing
+    columns:
+      - name: purchase_id
+        description: "A unique identifier for the purchase"
+        tests:
+          - unique
+          - not_null
+      - name: vendor_id
+        description: "The identifier of the vendor"
+      - name: employee_id
+        description: "The identifier of the employee"
+      - name: product_id
+        description: "The identifier of the product"
+      - name: shipment_id
+        description: "The identifier of the shipment"
+      - name: order_date
+        description: "The date the order was made"
+      - name: ship_status
+        description: "The shipment status"
+      - name: shipment_date
+        description: "The date the shipment was made"
+  - name: stg_shipment
+    columns:
+      - name: shipment_id
+        description: "A unique identifier for the shipment"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "The name of the shipment method"
+      - name: min_ship_charge
+        description: "The minimum shipment charge"
+      - name: pound_ship_charge
+        description: "The charge per pound"
+      - name: modified_date
+        description: "The date the shipment method was last modified"
+  - name: stg_vendor
+    columns:
+      - name: vendor_id
+        description: "A unique identifier for the vendor"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "The name of the vendor"
+      - name: account_number
+        description: "The account number of the vendor"
+      - name: standard_number
+        description: "The standard number of the vendor"
+      - name: standard_price
+        description: "The standard price offered by the vendor"
+      - name: city
+        description: "The city where the vendor is located"
+      - name: state_province
+        description: "The state or province where the vendor is located"
+      - name: country
+        description: "The country where the vendor is located"
