@@ -6,7 +6,8 @@ with product as (
         color,
         size,
         weight,
-        productsubcategoryid
+        productsubcategoryid,
+        modifieddate as modified_date
     from 
         {{ source('production', 'product') }}
 ),
@@ -36,7 +37,8 @@ select
     s.subcategory,
     p.color,
     p.size,
-    p.weight
+    p.weight,
+    p.modified_date
 from 
     product p
     left join subcategory s on p.productsubcategoryid = s.productsubcategoryid

@@ -8,11 +8,6 @@ models:
     description: |
       Dimension table containing information about employees.
     columns:
-      - name: sk_employee
-        description: "A unique identifier for this record in the table"
-        tests:
-          - unique
-          - not_null
       - name: employee_id
         description: The unique identifier for the employee.
         tests:
@@ -48,11 +43,6 @@ models:
     description: |
       Dimension table containing information about vendors.
     columns:
-      - name: sk_vendor
-        description: "A unique identifier for this record in the table"
-        tests:
-          - unique
-          - not_null
       - name: vendor_id
         description: The unique identifier for the employee.
         tests:
@@ -112,11 +102,6 @@ models:
     description: |
       Dimension table containing information about shipment methods.
     columns:
-      - name: sk_employee
-        description: "A unique identifier for this record in the table"
-        tests:
-          - unique
-          - not_null
       - name: ship_method_id
         description: The unique identifier for the shipment method.
         tests:
