@@ -30,4 +30,4 @@ select
     year_and_month,
     year_and_month_abbrev,
     year_and_quarter
-from {{ ref('stg_dim_date') }}
+from {{ ref ("stg_dim_date") }}
