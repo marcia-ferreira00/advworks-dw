@@ -30,5 +30,9 @@ select
     year_and_month,
     year_and_month_abbrev,
     year_and_quarter
+<<<<<<< HEAD
 from {{ ref("stg_dim_date") }}
 
+=======
+from {{ ref ("stg_dim_date") }}
+>>>>>>> 531ca9f52072891edee6dbff3b21ad5aa0f3ddb2

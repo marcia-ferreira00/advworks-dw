@@ -3,7 +3,7 @@
 {{
     config(
         target_schema='snapshots',
-        unique_key='ship_method_id',
+        unique_key='shipment_id',
         strategy='timestamp',
         updated_at='modified_date'
     )
