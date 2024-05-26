@@ -16,10 +16,6 @@ snapshots:
         description: "This record is valid from the timestamp in dbt_valid_from until this timestamp. If this is NULL, it means this record is the currently valid version"
       - name: dbt_updated_at
         description: "The timestamp of when this record was last updated"
-<<<<<<< HEAD
-
-=======
->>>>>>> 531ca9f52072891edee6dbff3b21ad5aa0f3ddb2
   - name: sp_shipment
     description: "A snapshot of the stg_shipment model, to keep track of changes to that table"
     columns:
@@ -36,7 +32,6 @@ snapshots:
         description: "This record is valid from the timestamp in dbt_valid_from until this timestamp. If this is NULL, it means this record is the currently valid version"
       - name: dbt_updated_at
         description: "The timestamp of when this record was last updated"
-<<<<<<< HEAD
 
   - name: sp_vendor
     description: "A snapshot of the stg_vendor model, to keep track of changes to that table"
@@ -55,5 +50,3 @@ snapshots:
       - name: dbt_updated_at
         description: "The timestamp of when this record was last updated"
         
-=======
->>>>>>> 531ca9f52072891edee6dbff3b21ad5aa0f3ddb2
