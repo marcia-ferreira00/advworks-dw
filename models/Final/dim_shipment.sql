@@ -1,13 +1,13 @@
-    select 
-            dbt_scd_id as ship_method_id
-            shipment_id,
-            timestamp,
-            purchasing,
+    with first_version as (
+    select  ship_method_id,
+            ship_name,
+            ship_base,
+            ship_rate
     from {{ ref('sp_shipment') }}
-
-       config(
-        target_schema='snapshots',
-        unique_key='ship_method_id',
-        strategy='timestamp',
-        updated_at='modified_date'
-    )
+)
+select
+    ship_method_id,
+    ship_name,
+    ship_base,
+    ship_rate
+from first_version

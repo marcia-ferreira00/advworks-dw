@@ -70,19 +70,20 @@ models:
         description: "The date the shipment was made"
   - name: stg_shipment
     columns:
-      - name: shipment_id
-        description: "A unique identifier for the shipment"
-        tests:
+      - name: ship_method_id
+        description: The unique identifier for the shipment method.
+        tests:      
           - unique
           - not_null
-      - name: name
-        description: "The name of the shipment method"
-      - name: min_ship_charge
-        description: "The minimum shipment charge"
-      - name: pound_ship_charge
-        description: "The charge per pound"
+      - name: ship_name
+        description: The name of the shipment method.
+      - name: ship_base
+        description: The base cost of the shipment.
+      - name: ship_rate
+        description: The rate of the shipment.
       - name: modified_date
-        description: "The date the shipment method was last modified"
+        description: The date when the shipment method record was last modified.
+
   - name: stg_vendor
     columns:
       - name: vendor_id
